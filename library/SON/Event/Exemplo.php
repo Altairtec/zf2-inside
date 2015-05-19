@@ -88,6 +88,4 @@ class Exemplo implements EventManagerAwareInterface {
                 array('valor' => 'Executou depois'));  
     }
     
-    
-
 }

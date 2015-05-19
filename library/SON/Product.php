@@ -6,11 +6,23 @@ namespace SON;
 class Product {
     
     private $category;
+    private $db;
     
     public function addCategory(\SON\CategoryInterface $category)
     {
         $this->category[] = $category;
     }
+    
+    public function setDb(\SON\Db\Connection $db){
+        $this->db = $db;
+        return $this;
+    }
+    
+    public function getDb(){
+        return $this->db;
+    }
+    
+        
     
     /*
     public function setCategory(\SON\Category $category)

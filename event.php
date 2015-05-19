@@ -57,8 +57,8 @@ echo '</pre>';
 
 //$events->clearListeners('SON\Event\Exemplo'); //Limpa os listeners
 
-$exemplo = new SON\Event\Exemplo(); 
-$exemplo->getEventManager()->setSharedManager($events); //events é um sharedEventManager
+//$exemplo = new SON\Event\Exemplo(); 
+//$exemplo->getEventManager()->setSharedManager($events); //events é um sharedEventManager
 //$exemplo->metodo(20);
 //$exemplo->metodo2();
 
@@ -66,4 +66,13 @@ $exemplo->getEventManager()->setSharedManager($events); //events é um sharedEve
 //@print_r($exemplo->metodo3(1));
 //@print_r($exemplo->metodo3(2));
 
+//$exemplo->multiplosEventos(1);
+
+$exemploListener = new SON\Event\ExemploListener;
+$exemplo = new SON\Event\Exemplo;
+$exemplo->getEventManager()->attachAggregate($exemploListener);
+
 $exemplo->multiplosEventos(1);
+
+
+
